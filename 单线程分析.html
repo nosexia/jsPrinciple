@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js单线程异步分析</title>
+</head>
+<body>
+	<p>
+		以下执行结果：1，2，3，4，5，6，7，8，9</br>
+		最后“执行定时器”
+	</p>
+</body>
+<script type="text/javascript">
+	setTimeout(function(){
+		console.log('执行定时器');
+	},0);
+	for(var i=0; i<10;i++){
+		console.log(i);
+	}
+</script>
+</html>
