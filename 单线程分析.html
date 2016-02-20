@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>同步请求情况</title>
+    <title>异步请求情况</title>
     </style>
 </head>
 <body>
-
-    <p>同步发生阻塞，当同步请求完成时，继续执行主线程</p>
+    <p>
+        异步非堵塞，当请求事件完成时， 事件回调函数加入任务列表，放到主线程的末尾执行
+    </p>
 </body>
 <script type="text/javascript" src="scripts/jquery.js" ></script>
 <script type="text/javascript">
     // 同步
     $.ajax({
-        async: false,
+        async: true,
         url: './images/event_task.jpg'
     }).done(function(){
-        console.log('ajax同步执行');
+        console.log('ajax异步执行');
     });
 
     console.log('主线程');
