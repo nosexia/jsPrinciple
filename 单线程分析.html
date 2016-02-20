@@ -2,36 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>任务队列之先进先出</title>
+	<title>主线程和任务队列示意图</title>
     </style>
 </head>
 <body>
-    首先跑完主线程</br>
-    主线程跑完之后，会不断查询任务队列，看是否有新的任务</br>
-    有新的任务，把新的任务放到主线程末尾执行</br>
 
-    解说以下代码执行</br>
-
-    1.跑完主线程</br>
-    2.监听到document的DOMContentLoaded事件完成， 事件回调函数加入任务列表，最为最新的任务加入到主线程执行</br>
-    3.执行完成了所有主线程上的任务</br>
-    4.监听到window的load事件完成， 事件回调函数加入任务列表，最为最新的任务加入到主线程执行</br>
-
-    note:任务列表中，可能存在多个任务，按照先后顺序依次加入主线程执行，执行完成一个之后，主线程对任务列表查询，是否还有新的任务
-
-    
+    <img src="images/event_task.jpg">
 </body>
 <script type="text/javascript">
     
-	// window监听load事件
-    window.addEventListener('load', function(){
-        console.log('window的load事件回调');
-    }, false);
-
-    // document监听DOMContentLoaded事件
-    document.addEventListener('DOMContentLoaded', function(){
-        console.log('document的DOMContentLoaded事件回调');
-    }, false);
     
 </script>
 </html>
