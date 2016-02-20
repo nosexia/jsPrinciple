@@ -2,31 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>主线程和任务列队( network事件 )</title>
+    <title>同步请求情况</title>
     </style>
 </head>
 <body>
 
-    
-    首先执行主线程</br>
-    执行完成主线程，不断轮询任务列表，当req的onreadystatechange事件完成是，事件回调函数加入任务列表</br>
-    加入到主线程中执行
+    <p>同步发生阻塞，当同步请求完成时，继续执行主线程</p>
 </body>
+<script type="text/javascript" src="scripts/jquery.js" ></script>
 <script type="text/javascript">
-    
-    // 写get请求
-    var req = new XMLHttpRequest();
-    req.open('GET', './images/event_task.jpg', true);
-    req.onreadystatechange = function(){
-        if(this.readyState === 4){
-            console.log('完成请求');
-        }
-    };
+    // 同步
+    $.ajax({
+        async: false,
+        url: './images/event_task.jpg'
+    }).done(function(){
+        console.log('ajax同步执行');
+    });
 
-    console.log('这里是主线程');
-
-    //发送请求
-    req.send();
+    console.log('主线程');
     
 </script>
 </html>
