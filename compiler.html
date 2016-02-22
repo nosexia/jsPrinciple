@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>compiler和scope紧密合作（声明变量a）</title>
+	<title>compiler和engine紧密合作（对变量a赋值）</title>
 </head>
 <body>
-	<p>
-		1.当声明一个变量，编译器和作用域具体怎么去处理一个变量	</br>
+	以下代码在compiler, engine, scope </br>
+	<h3>编译器和作用域对话</h3>
+	1.编译器编译14行, 询问当前全局作用域，是否已经存在变量a,</br>
+	没有变量a存在, 在当前作用域中声明变量a</br>
+	2.编译器编译15行，询问当前作用域中，是否已经存在变量a</br>
+	作用域说，已经存在变量a, 编译器跳过此声明</br>
 
-		总结如下：</br>
-		编译器编译到变量a时，会去询问当前作用域，该作用域内，是否已经声明了变量a</br>
-		已经声明过变量a,那么忽略这次变量a的声明</br>
-		反之，在该作用域内声明变量a
+	<h3>编译器为引擎生成运行所需代码</h3>
+
+	<h3>引擎和作用域对话</h3>
+	1.引擎运行到14行，编译器依旧会询问作用域，哥们，在当前作用域是否存在变量a</br>
 
 
-	</p>
 </body>
 <script type="text/javascript">
+	var a = 1;
 	var a;
+	alert(a);
 </script>
 </html>
