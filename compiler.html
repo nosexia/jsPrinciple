@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>compiler和scope紧密合作（声明变量a）</title>
+</head>
+<body>
+	<p>
+		1.当声明一个变量，编译器和作用域具体怎么去处理一个变量	</br>
+
+		总结如下：</br>
+		编译器编译到变量a时，会去询问当前作用域，该作用域内，是否已经声明了变量a</br>
+		已经声明过变量a,那么忽略这次变量a的声明</br>
+		反之，在该作用域内声明变量a
+
+
+	</p>
+</body>
+<script type="text/javascript">
+	var a;
+</script>
+</html>
