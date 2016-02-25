@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>隐式的方式在fn2作用域下，创建变量i</title>
+	<title></title>
 </head>
 <body>
-	
+	在fn2作用域下，创建全局变量i</br>
+	导致对循环中全局变量污染，
+	需要在fn2作用域下，定义变量i,改写 var i = 3;
 </body>
 <script type="text/javascript">
 	
 
-	function fn2(i){
-		// 隐式的方式在fn2作用域下，创建变量i
+	function fn2(a){		
 		i = 3;
-		console.log(i);
+		console.log(a+i);
 	}
 
 	for(var i=0; i<10; i++){
