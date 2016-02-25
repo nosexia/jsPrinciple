@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数调用栈的了解</title>
+</head>
+<style type="text/css">
+</style>
+<body>
+		查看this.fn2的调用栈</br>
+		在调试工具中，找到Call Stack中的第二行，就是当前函数所处的调用栈</br>
+		此处时一个匿名函数
+
+</body>
+<script type="text/javascript">
+	function fn1(){
+		debugger;
+		this.fn2();
+	};
+
+	function fn2(){
+		console.log('222');
+	};
+
+	fn1();
+
+
+</script>
+</html>
