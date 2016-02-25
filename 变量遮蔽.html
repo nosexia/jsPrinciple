@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐式的方式在fn2作用域下，创建变量i</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+
+	function fn2(i){
+		// 隐式的方式在fn2作用域下，创建变量i
+		i = 3;
+		console.log(i);
+	}
+
+	for(var i=0; i<10; i++){
+		fn2(i)
+	}
+	
+</script>
+</html>
