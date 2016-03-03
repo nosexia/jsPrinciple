@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>get表单提交</title>
+	<title>get表单提交, 提交中的数据，包含数组</title>
 </head>
 <body>
 
 
 点击提交按钮后：在请求中看到</br>
 Query String Parameters
-name: 111
+name: 111,
+'hobby[]': 1,
+'hobby[]': 2
 
 <form action="" method="get">
-	<input type="text" name="name" placeholder="输入姓名">
+	<input type="text" name="name" placeholder="输入姓名"/></br>
+	爱好：<input type="checkbox" name="hobby[]" value="1"/>
+	<input type="checkbox" name="hobby[]" value="2"/>
+	<input type="checkbox" name="hobby[]" value="3"/>
 	<input type="submit" value="提交">
 </form>
 	
