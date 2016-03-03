@@ -2,22 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>get表单提交, 提交中的数据，包含数组</title>
+	<title>post表单提交, 提交中的数据，包含数组</title>
 </head>
 <body>
+Apache、IIS、Nginx等大多数web服务器，都不允许静态文件响应POST请求( 405 Not Allowed )</br>
 
+index.php响应信息看到</br>
+Form Data， （注意是Form Data）
+name:1111
+hobby[]:1
+hobby[]:2
 
-点击提交按钮后：在请求中看到</br>
-Query String Parameters
-name: 111,
-'hobby[]': 1,
-'hobby[]': 2
-
-<form action="" method="get">
+<form action="index.php" method="post">
 	<input type="text" name="name" placeholder="输入姓名"/></br>
+
+	
 	爱好：<input type="checkbox" name="hobby[]" value="1"/>
 	<input type="checkbox" name="hobby[]" value="2"/>
 	<input type="checkbox" name="hobby[]" value="3"/>
+	
+	
 	<input type="submit" value="提交">
 </form>
 	
