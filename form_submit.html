@@ -2,36 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>post方式提交数据和get方式提交数据区别</title>
+	<title>XMLHttpRequest对象，post提交</title>
 </head>
 <body>
-
-post方式提交数据,数据的展示:</br>
-Form Data</br>
-name: 111</br>
-hobby[]: 2</br>
-hobby[]:3</br>
-
-
-get方式提交数据，数据的展示</br>
-Query String Parameters</br>
-name: 111</br>
-hobby[]: 2</br>
-
-
-
-
-
-<form action="test.php" method="get">
-	<input type="text" name="name" placeholder="输入姓名"/></br>
-	
-	爱好：<input type="checkbox" name="hobby[]" value="1"/>
-	<input type="checkbox" name="hobby[]" value="2"/>
-	<input type="checkbox" name="hobby[]" value="3"/>
-	
-	
-	<input type="submit" value="提交">
-</form>
-	
+    1.XMLHttpRequest提交和表单提交形式一致
 </body>
+<script type="text/javascript">
+    var req = new XMLHttpRequest();
+    req.open('post', 'test.php', true);
+    // 模拟表单形式提交post
+    req.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    var queryString = 'name=nose';
+    req.send(queryString);
+</script>
 </html>
