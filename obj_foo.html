@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对obj.foo的引用</title>
+</head>
+<body>
+	仅仅是对foo函数的引用</br>
+</body>
+<script type="text/javascript">
+	function foo(){
+		console.log(this.a);
+	}
+
+	var obj = {
+		foo: foo,
+		a: 2
+	};
+
+	var a = 'global';
+
+	var bar = obj.foo;
+	bar();      // 结果是global
+</script>
+</html>
