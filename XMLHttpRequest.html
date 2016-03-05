@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>post到test.php中的数据展示</title>
+    <title>post提交时，设置req.setRequestHeader</title>
 </head>
 <body>
-传入值为数组时</br>
-var_dump($_POST['hobby'])</br>
-array(2) {
-  [0]=>
-  string(1) "1"
-  [1]=>
-  string(1) "2"
-}
+1.此处有坑</br>
+当用XMLHttpRequest对象，发送post请求时</br>
+必须在open方法调用之后</br>
+调用req.setRequestHeader，设置请求头部的'Content-Type'属性</br>
+不然，后端获取不到数据
 
 </body>
 <script type="text/javascript">
