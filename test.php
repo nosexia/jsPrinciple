@@ -1,3 +1,3 @@
 <?php
-    echo '1111'
+    var_dump($_POST['hobby']) ;
 ?>

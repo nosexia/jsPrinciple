@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>XMLHttpRequest对象，post提交</title>
+    <title>post到test.php中的数据展示</title>
 </head>
 <body>
-    1.此处注意有坑，得先open，然后setRequestHeader,
+传入值为数组时</br>
+var_dump($_POST['hobby'])</br>
+array(2) {
+  [0]=>
+  string(1) "1"
+  [1]=>
+  string(1) "2"
+}
 
-    //post请求的数据是放在req.send(data)中的
-    //get请求的数据是接在url后面
 </body>
 <script type="text/javascript">
     var req = new XMLHttpRequest();
