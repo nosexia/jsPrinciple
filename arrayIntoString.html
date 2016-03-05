@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组快速转化为字符串</title>
+</head>
+<body>
+    encodeURIComponent可以转换一个数组为"编译后"的"字符串",</br>
+    decodeURIComponent把字符串解编译。
+</body>
+
+<script type="text/javascript">    
+    var nameArray = ['夏振华','nose','西米'];
+    var encodeStr = encodeURIComponent(nameArray);      
+    var decodeStr = decodeURIComponent(encodeStr);
+    console.log(decodeStr);
+</script>
+</html>
