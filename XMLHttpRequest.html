@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>XMLHttpRequest对象，get提交</title>
+    <title>XMLHttpRequest对象，post提交</title>
 </head>
 <body>
-    1. 创建XMLHttpRequest对象，get请求</br>
-    2. 字段值为对象的情况, 喜欢玩base,不喜欢ping ，书写"hobby[base]=1&hobby[ping]=0"</br>
+    1.此处注意有坑，得先open，然后setRequestHeader,
+
+    //post请求的数据是放在req.send(data)中的
+    //get请求的数据是接在url后面
 </body>
 <script type="text/javascript">
     var req = new XMLHttpRequest();
-    var queryParams = '?name=nose&hobby[base]=1&hobby[ping]=0';
-    req.open('post', 'test.php' + queryParams, true);
-    req.send(null);
+    var queryParams = 'name=nose&hobby[]=1&hobby[]=2';
+    req.open('post', 'test.php' , true);
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    req.send(queryParams);
 </script>
 </html>
