@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器解析请求先后顺序</title>
+</head>
+<body>
+    1. scripts引入的请求，从上往下一个个请求</br>
+    2. 用scripts方法生成的请求是异步的。
+</body>
+<script type="text/javascript" src="./scripts/test1.js"></script>
+<script type="text/javascript" src="./scripts/test3.js"></script>
+</html>

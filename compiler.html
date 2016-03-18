@@ -5,23 +5,17 @@
 	<title>compiler和engine紧密合作（对变量a赋值）</title>
 </head>
 <body>
-	以下代码在compiler, engine, scope </br>
-	<h3>编译器和作用域对话</h3>
-	1.编译器编译14行, 询问当前全局作用域，是否已经存在变量a,</br>
-	没有变量a存在, 在当前作用域中声明变量a</br>
-	2.编译器编译15行，询问当前作用域中，是否已经存在变量a</br>
-	作用域说，已经存在变量a, 编译器跳过此声明</br>
-
-	<h3>编译器为引擎生成运行所需代码</h3>
-
-	<h3>引擎和作用域对话</h3>
-	1.引擎运行到14行，引擎依旧要询问作用域，哥们，在当前作用域是否存在变量a</br>
-	确实存在，引擎会给变量a赋值
-
+	
 </body>
 <script type="text/javascript">
-	var a = 1;
-	var a;
-	alert(a);
+	setTimeout(function(){
+        console.log('1111');
+    },1000)
+</script>
+
+<script type="text/javascript">
+    setTimeout(function(){
+        console.log('222');
+    },500)
 </script>
 </html>
