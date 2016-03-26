@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>每一次闭包创建一个新的作用域</title>
+</head>
+<body>
+    每一次执行匿名自执行函数，都会产生一个新的作用域</br>
+    循环产生了10个作用域，每个变量i都被隔离在独立作用域中。
+</body>
+<script type="text/javascript">
+    for(var i=0; i<10; i++){
+        (function(i){
+            setTimeout(function(){
+                console.log(i);
+            });
+        })(i);
+    }
+</script>
+</html>

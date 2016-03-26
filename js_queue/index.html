@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>浏览器解析请求先后顺序</title>
+    <title>浏览器加载资源分为(下载资源， 渲染资源)</title>
 </head>
 <body>
-    1. scripts引入的请求，从上往下一个个请求</br>
-    2. 用scripts方法生成的请求是异步的。
+    1.下载资源，从上往下的向服务器发起请求。</br>
+    2.渲染资源，从上往下渲染</br>
+    2.1 渲染img的规则，是可以同时渲染其他资源类型</br>
+    2.2 渲染css规则， 同时渲染其他自然类型。
+    2.3 渲染scripts，会暂停其他元素的渲染。
+    <script type="text/javascript" src="./scripts/test1.js"></script>
+    <script type="text/javascript" src="./scripts/test3.js"></script>
+    <img src="../images/event_task.jpg">
 </body>
-<script type="text/javascript" src="./scripts/test1.js"></script>
-<script type="text/javascript" src="./scripts/test3.js"></script>
+
+
 </html>
