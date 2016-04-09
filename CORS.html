@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现简单跨域</title>
+</head>
+<body>
+1.在另外一个预，设置这几个参数
+Access-Control-Allow-Origin</br>
+Access-Control-Allow-Headers</br>
+Access-Control-Request-Method</br>
+</body>
+<script type="text/javascript">
+    var req = new XMLHttpRequest();
+    req.open('get', '//test1.com/test.php' , true);
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    req.send(null);
+
+/*    <?php
+    header('Access-Control-Allow-Origin: http://test.com');
+    header('Access-Control-Allow-Headers: Content-Type');
+    header('Access-Control-Request-Method : POST, OPTIONS, GET');
+    echo '1111'; exit();
+    ?>*/
+</script>
+</html>

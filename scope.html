@@ -9,12 +9,7 @@
     循环产生了10个作用域，每个变量i都被隔离在独立作用域中。
 </body>
 <script type="text/javascript">
-    for(var i=0; i<10; i++){
-        (function(i){
-            setTimeout(function(){
-                console.log(i);
-            });
-        })(i);
-    }
+    var a=b={};
+    console.log(a === b);
 </script>
 </html>
